@@ -1,0 +1,128 @@
+/* Reset and base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    transition: all 0.3s ease;
+    direction: ltr;
+}
+
+.lang-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.lang-switch button {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    margin-left: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.lang-switch button:hover {
+    background: #0056b3;
+}
+
+.hero {
+    max-width: 900px;
+    margin: 100px auto 50px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    padding: 40px 30px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-img img {
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    object-fit: cover;
+}
+
+.hero-text {
+    flex: 1 1 400px;
+    min-width: 280px;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    margin: 0 0 10px;
+    color: #007bff;
+}
+
+.hero-text h3 {
+    font-size: 1.4rem;
+    margin: 0 0 20px;
+    color: #444;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.contact-buttons a.btn {
+    text-decoration: none;
+    padding: 12px 22px;
+    margin-right: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.btn.insta {
+    background: #E4405F;
+    color: white;
+}
+
+.btn.insta:hover {
+    background: #b72e47;
+}
+
+.btn.whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.btn.whatsapp:hover {
+    background: #1ebe57;
+}
+
+/* التحكم في إظهار اللغات */
+.lang-content {
+    display: none;
+}
+
+body[lang="en"] .en {
+    display: block;
+}
+
+body[lang="ar"] .ar {
+    display: block;
+}
+
+/* اتجاه النص */
+body[lang="ar"] {
+    direction: rtl;
+}

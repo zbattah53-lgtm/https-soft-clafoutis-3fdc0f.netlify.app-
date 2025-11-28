@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zaid Batah | زيد بطاح</title>
+    <style>
+        /* Reset and base */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            transition: all 0.3s ease;
+            direction: ltr;
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .lang-switch button {
+            background: #007bff;
+            border: none;
+            color: white;
+            padding: 8px 14px;
+            margin-left: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .lang-switch button:hover {
+            background: #0056b3;
+        }
+
+        .hero {
+            max-width: 900px;
+            margin: 100px auto 50px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            padding: 40px 30px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* --- صورة الهيرو مع انميشن --- */
+        .hero-img img {
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            object-fit: cover;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s ease forwards;
+        }
+
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .hero-text {
+            flex: 1 1 400px;
+            min-width: 280px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            margin: 0 0 10px;
+            color: #007bff;
+        }
+
+        .hero-text h3 {
+            font-size: 1.4rem;
+            margin: 0 0 20px;
+            color: #444;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .contact-buttons a.btn {
+            text-decoration: none;
+            padding: 12px 22px;
+            margin-right: 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .btn.insta {
+            background: #E4405F;
+            color: white;
+        }
+
+        .btn.insta:hover {
+            background: #b72e47;
+        }
+
+        .btn.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn.whatsapp:hover {
+            background: #1ebe57;
+        }
+
+        /* التحكم في إظهار اللغات */
+        .lang-content {
+            display: none;
+        }
+
+        body[lang="en"] .en {
+            display: block;
+        }
+
+        body[lang="ar"] .ar {
+            display: block;
+        }
+
+        /* اتجاه النص */
+        body[lang="ar"] {
+            direction: rtl;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- زر تغيير اللغة -->
+    <div class="lang-switch">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('ar')">AR</button>
+    </div>
+
+    <!-- القسم الرئيسي - الهيرو -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <!-- الصورة -->
+            <div class="hero-img">
+                <img src="zaidph.jpg" alt="Personal Photo">
+            </div>
+
+            <!-- النص -->
+            <div class="hero-text">
+
+                <!-- اللغة الإنجليزية -->
+                <div class="en lang-content">
+                    <h1>Hi, I'm <span>Zaid Batah</span></h1>
+                    <h3>Game Developer & Programmer</h3>
+                    <p>
+                        Hello, I'm <strong>Zaid Batah</strong>, a passionate game developer and programmer dedicated to creating fun and engaging interactive experiences. I studied at <strong>Omar Al-Lafi Secondary School for Boys</strong>, and I currently live in <strong>Irbid, Jordan</strong>.
+                        I constantly work on improving my skills and building games that combine creativity, strong concepts, and enjoyable gameplay. I aspire to enter the professional game development industry and contribute to projects that inspire players and leave a meaningful impact.
+                    </p>
+                    <div class="contact-buttons">
+                        <a href="https://www.instagram.com/ll._.lzaid" target="_blank" class="btn insta">Instagram</a>
+                        <a href="tel:+96277903826" class="btn whatsapp">WhatsApp: +962 7 7903 826</a>
+                    </div>
+                </div>
+
+                <!-- اللغة العربية -->
+                <div class="ar lang-content">
+                    <h1>مرحباً، أنا <span>زيد بطاح</span></h1>
+                    <h3>مطور ومبرمج ألعاب</h3>
+                    <p>
+                        مرحباً، أنا <strong>زيد بطاح</strong>, مطوّر ومبرمج ألعاب شغوف بابتكار تجارب ترفيهية ممتعة تجمع بين الإبداع والتكنولوجيا. درست في <strong>مدرسة عمر اللافي الثانوية للبنين</strong>، وأعيش حالياً في <strong>إربد، الأردن</strong>.
+                        أسعى دائماً لتطوير مهاراتي، وصناعة ألعاب تجمع بين المتعة، الفكرة، والتصميم الجيد. لدي طموح كبير لدخول عالم تطوير الألعاب على مستوى احترافي، والمشاركة في مشاريع تلهم اللاعبين وتترك أثراً إيجابياً.
+                    </p>
+                    <div class="contact-buttons">
+                        <a href="https://www.instagram.com/ll._.lzaid" target="_blank" class="btn insta">إنستغرام</a>
+                        <a href="tel:+96277903826" class="btn whatsapp">واتساب: +962 7 7903 826</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function setLang(lang) {
+            document.body.setAttribute('lang', lang);
+        }
+
+        // تعيين اللغة الافتراضية
+        setLang('en');
+    </script>
+
+</body>
+</html>
